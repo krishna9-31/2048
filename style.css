@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #e9d5ff, #ffffff);
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.score-container {
+  background: #cdb4f5;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#restart-button {
+  cursor: pointer;
+  background: white;
+  color: #7b4db2;
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  border: 2px solid #cdb4f5;
+  transition: all 0.3s ease;
+}
+
+#restart-button:hover {
+  background: #cdb4f5;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 12px;
+  width: 460px;
+  height: 460px;
+  padding: 15px;
+  background: #f6f0ff;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.tile {
+  background: #f6f0ff;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  animation: pop 0.4s ease;
+  user-select: none;
+}
+
+.tile[data-value="0"] {
+  background: #f6f0ff;
+  color: transparent;
+  border: 2px solid #e0d4fa;
+}
+
+.tile[data-value="2"] {
+  background: #e0d4fa;
+  color: #333;
+}
+
+.tile[data-value="4"] {
+  background: #d8b4fe;
+  color: #222;
+}
+
+.tile[data-value="8"] {
+  background: #ffe066;
+  color: #333;
+}
+
+.tile[data-value="16"] {
+  background: #ffd93d;
+  color: #333;
+}
+
+.tile[data-value="32"] {
+  background: #ff9aa2;
+  color: white;
+}
+
+.tile[data-value="64"] {
+  background: #ffb347;
+  color: white;
+}
+
+.tile[data-value="128"] {
+  background: #ff758f;
+  color: white;
+}
+
+.tile[data-value="256"] {
+  background: #ffb700;
+  color: white;
+}
+
+.tile[data-value="512"] {
+  background: #ff6b6b;
+  color: white;
+}
+
+.tile[data-value="1024"] {
+  background: #ff595e;
+  color: white;
+}
+
+.tile[data-value="2048"] {
+  background: #ffcc00;
+  color: white;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.tile:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(160, 120, 230, 0.3);
+}
